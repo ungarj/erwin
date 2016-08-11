@@ -10,7 +10,7 @@ setup(
     author_email='joachim.ungar@gmail.com',
     url='https://github.com/ungarj/erwin',
     license='MIT',
-    packages=['erwin'],
+    # packages=['erwin'],
     install_requires=[
         ],
     classifiers=[
