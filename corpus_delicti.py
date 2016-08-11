@@ -16,7 +16,7 @@ with open(sample_text) as f:
     sample = f.read()
 
 def tokenize_casual(sample_text):
-    word_tokens = TweetTokenizer(preserve_case=False, strip_handles=False, reduce_len=False).tokenize(sample_text)
+    word_tokens = TweetTokenizer(preserve_case=True, strip_handles=False, reduce_len=False).tokenize(sample_text)
     #print(word_tokens)
 
     #word_tokens = map(str.lower, word_tokens) ## to lowercase
@@ -33,4 +33,7 @@ tokenized = tokenize_casual(sample)
 print(tokenized.value_counts().head(50))
 
 
-['blöße', ]
+hasthag_worhty = ['Blöße', "Einhorn", "Bachblüten"]
+
+## was in der liste hashtagworthy is
+#[w for w in word_tokens if not w in stop_words]
