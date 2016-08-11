@@ -12,6 +12,9 @@ setup(
     license='MIT',
     # packages=['erwin'],
     install_requires=[
+        'scikit-learn',
+        'scipy',
+        'numpy',
         ],
     classifiers=[
         'Development Status :: 3 - Alpha',
