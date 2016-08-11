@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import random
@@ -28,7 +28,7 @@ class Markov:
 
     def generate(self, max_length=120):
         try:
-            current = random.choice(self.chains.keys())
+            current = random.choice(list(self.chains))
             length = 0
             generated = []
             while length < max_length:
@@ -46,9 +46,14 @@ class Markov:
         except:
             return ''
 
+
+def manfred_sagt(textfile="sample.txt", order=10):
+    with open(textfile, 'r') as schas:
+        schastext = schas.read()
+    return Markov(
+        schastext,
+        order=order
+        ).generate()
+
 if __name__ == '__main__':
-    manfred_sagt = Markov(
-        unicode(sys.stdin.read(), 'utf-8'),
-        order=int(sys.argv[1])
-    )
-    print(manfred_sagt.generate())
+    print(manfred_sagt())
